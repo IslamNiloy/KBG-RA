@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({% static 'assets/img/team-header.jpg' %});">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Management</h2>
+        <ol>
+          <li><a href={% url 'home' %}>Home</a></li>
+          <li>Management</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+          <div class="section-header">
+              <h2>Management of Khan brothers group</h2>
+          </div>
+          <div class="row gy-4">
+              {% for team in team %}
+              <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                  <div class="team-member">
+                      <div class="member-img">
+                          <img src="{{ team.image.url }}" class="img-fluid" width="500px" alt="{{ team.name }}">
+                      </div>
+                      <div class="member-info">
+                          <h4>{{ team.name }}</h4>
+                          <span>{{ team.designation }}</span>
+                          <p>{{ team.bio }}</p>
+                      </div>
+                  </div>
+              </div><!-- End Team Member -->
+              {% endfor %}
+          </div>
+      </div>
+  </section>
+
+          
+
+  </main><!-- End #main -->
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+  <div class="container" data-aos="fade-up">
+      <div class="section-header">
+          <h2>Management of KBG recruiting Agency</h2>
+      </div>
+      <div class="row gy-4">
+          {% for team in teamofra %}
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="team-member">
+                  <div class="member-img">
+                      <img src="{{ team.image.url }}" class="img-fluid" width="500px" alt="{{ team.name }}">
+                  </div>
+                  <div class="member-info">
+                      <h4>{{ team.name }}</h4>
+                      <span>{{ team.designation }}</span>
+                      <p>{{ team.bio }}</p>
+                  </div>
+              </div>
+          </div><!-- End Team Member -->
+          {% endfor %}
+      </div>
+  </div>
+</section>
+
+
+{% endblock content %}

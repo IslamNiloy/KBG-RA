@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({% static 'assets/img/blog-header.jpg' %});">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Blog</h2>
+        <ol>
+          <li><a href={% url 'home' %}>Home</a></li>
+          <li>Blog</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="2oo">
+
+            <div class="row gy-5 posts-list">
+
+              <div class="col-lg-6">
+                <article class="d-flex flex-column">
+
+                  <div class="post-img">
+                    <img src={% static 'assets\img\blog\manpower-planning-mc-slide2.png' %} alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="blog-details.html">Achievement is rewarded and encouraged.</a>
+                  </h2>
+
+                 
+                  <div class="content">
+                    <p>
+                      we are concerned with individuals and how important work is to them. we trust, support, and respect people as unique individuals, allowing them to accomplish their personal and professional goals
+                    </p>
+                  </div>
+
+                  <div class="read-more mt-auto align-self-end">
+                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+
+                </article>
+              </div><!-- End post list item -->
+
+              <div class="col-lg-6">
+                <article class="d-flex flex-column">
+
+                  <div class="post-img">
+                    <img src={% static 'assets\img\blog\5-Effective-Strategies-To-Retain-The-Best-Manpower-BadaBusiness.jpg' %} alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="blog-details1.html">Manpower is the superpower of any organization</a>
+                  </h2>
+                   <div class="content">
+                    <p>
+                      our organization and culture must continue to evolve, which calls for finding and keeping long-term high-caliber employees.
+                      A setting that encourages entrepreneurship, recognizes excellence, and pushes us to realize our full potential is also necessary.
+                      
+                    </p>
+                  </div>
+
+                  <div class="read-more mt-auto align-self-end">
+                    <a href="blog-details1.html">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+
+                </article>
+              </div><!-- End post list item -->
+
+              <div class="col-lg-6">
+                <article class="d-flex flex-column">
+
+                  <div class="post-img">
+                    <img src={% static 'assets\img\blog\05c27589a5b4a581e563185681f0d306.jpg' %} alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="blog-details2.html">Understanding of the roles and responsibilities</a>
+                  </h2>
+
+                 
+                  <div class="content">
+                    <p>
+                      Any manager worth their salt will tell you that the first step has to be an understanding of the role and responsibilities and being clear about what is required, in order to brief HR or your agency
+                    </p>
+                  </div>
+
+                  <div class="read-more mt-auto align-self-end">
+                    <a href="blog-details2.html">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+
+                </article>
+              </div><!-- End post list item -->
+
+              <div class="col-lg-6">
+                <article class="d-flex flex-column">
+
+                  <div class="post-img">
+                    <img src={% static 'assets\img\blog\recruitment-plan-760.jpg' %} alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="blog-details.html">Develop your competency grid</a>
+                  </h2>
+
+                 
+
+                  <div class="content">
+                    <p>
+                      we never agree to things as they are. we consistently question convention in search of fresh, more effective approaches.
+                    </p>
+                  </div>
+
+                  <div class="read-more mt-auto align-self-end">
+                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
+                  </div>
+
+                </article>
+              </div><!-- End post list item -->
+
+              
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}

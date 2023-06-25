@@ -1,0 +1,115 @@
+ {% extends 'base.html' %} 
+
+ {% block content %}
+
+ {% load static %}
+
+  <section id="hero" class="hero d-flex align-items-center" style="background: url('{{ homepage.background_photo.url }}') top center; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <h2 data-aos="fade-up">{{ homepage.title }}</h2>
+                <blockquote data-aos="fade-up" data-aos-delay="100">
+                    <p >{{ homepage.description }}</p>
+                </blockquote>
+                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <a href={% url 'about' %} class="btn-get-started">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <main id="main">
+
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header" style="">
+          <h2>Why Choose Us</h2>
+
+        </div>
+
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-5 img-bg" style="background-image: url('{% static 'assets/img/why-us-bg.jpg' %}')"></div>
+          <div class="col-xl-7 slides  position-relative">
+            <div class="slides-1 swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">Step Towards the Possibilities of Overseas Employment</h3>
+                    <h4 class="mb-3">KBG RECRUITING AGENCY is one of the fastest growing Government approved Manpower Agency with License NoI RL-2354</h4>
+                    <p>in Bangladesh registered under the Ministry of Expatriates Welfare & Overseas Employment which facilities professionally managed outflow of work force from Bangladesh to abroad</p>
+                  </div>
+                </div><!-- End slide item -->
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">We Bring Better opportunity</h3>
+                    <h4 class="mb-3">KBG Recruiting Agency believes that social responsibility goes far beyond simply making a donation to a worthy cause.</h4>
+                    <p>It 's about enhancing the variety of our neighborhoods and giving everyone the chance to enter the workforceI It involves keeping the big picture in mind and creating lasting solutions.</p>
+                  </div>
+                </div><!-- End slide item -->
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">KBG  Recruiting  Agency  is  a  member  of  Bangladesh  Association  of  International  Recruiting  Agencies (BAIRA)</h3>
+                    <h4 class="mb-3">The company's overarching philosophy has been to strive for excellence at all costs in order to establish itself as the leading supplier of competitive, effective, and trustworthy human resource solutionsI.</h4>
+                    <p>Despite of the fact that, Bangladesh has a large number of recruitment agencies, KBG Recruiting Agency understood that there was a demand for a professionally managed recruitment agency to bridge the gap between opportunities and opportunity seekers, and as a result the company was founded.</p>
+                  </div>
+                </div><!-- End slide item -->
+                <div class="swiper-slide">
+                  <div class="item">
+                    <h3 class="mb-3">KBG Recruiting Agency believes that social responsibility goes far beyond</h3>
+                    <h4 class="mb-3">solutionsI Our reward comes from knowing that we truly impact people's lives both now and, in the future, whether it 's assisting a young person who is unemployed in entering the workforce or helping an engineer find employment abroad.</h4>
+                    <p>We are uniquely positioned to identify where there are present and potential skills gaps, identify people who need assistance entering the workforce, and design solutions that bring these two groups together, benefiting bothI </p>
+                  </div>
+                </div><!-- End slide item -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Why Choose Us Section -->
+
+
+    <!-- ======= Our Services Section ======= -->
+
+    <section id="services-list" class="services-list">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="section-header">
+          <h2>Our Offices</h2>
+        </div>
+    
+        <div class="row gy-5">
+          {% for office in offices %}
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'100' }}">
+              <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">{{ office.title }}</a></h4>
+                <p class="description">{{ office.address }}<br>Cellphone: {{ office.cellphone }}{% if office.fax %}<br>Fax: {{ office.fax }}{% endif %}{% if office.website %}<br>Website: {{ office.website }}{% endif %} <br>Email: {{ office.email }}</p>  </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    
+  
+
+   <!-- ======= Call To Action Section ======= -->
+   <section id="call-to-action" class="call-to-action">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h3>Our systems</h3>
+          <p> Our programs and policies are designed to make the connection to work a viable option for those who need it.</p>
+          <a class="cta-btn" href={% url 'about' %}>Call To Action</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {% endblock%}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({% static 'assets/img/manpower.jpg.crdownload' %});">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Services</h2>
+        <ol>
+          <li><a href={% url 'home' %}>Home</a></li>
+          <li>Services</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+    <section id="services-list" class="services-list">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="section-header">
+          <h2>Our Offices</h2>
+        </div>
+    
+        <div class="row gy-5">
+          {% for office in offices %}
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'100' }}">
+              <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">{{ office.title }}</a></h4>
+                <p class="description">{{ office.address }}<br>Cellphone: {{ office.cellphone }}{% if office.fax %}<br>Fax: {{ office.fax }}{% endif %}{% if office.website %}<br>Website: {{ office.website }}{% endif %} <br>Email: {{ office.email }}</p>  </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    
+    <!-- ======= Services Cards Section ======= -->
+    <section id="services-cards" class="services-cards">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/image 36.png' %});"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Khan Brothers PP Woven Bag Limited.</h4>
+                    <p>A Khan Br0thers PP w0ven Bag Industries Ltd.
+                       is a Manufacturer and exp0rter 0f Flexible Intermediate Bulk C0ntainers (FIBC/Jamb0 Bag) & P0ly Pr0pylene (PP) w0ven Bags,
+                      PP w0ven sacks, w0ven fabrics, industrial w0ven fabrics, PP w0ven fabrics.
+          
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/image 37.png' %} );"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Khan Brothers Bag Industries Limited</h4>
+                    <p>Accredited with the Internati0nal Quality Management Standard and IS0 9000:2009,
+                      Khan Br0thers Bag Industries Ltd has attained rec0gniti0n am0ng Bangladesh's T0p 10 w0ven
+                
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/image 39.png' %} );"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Khan Brothers Knitwear Industries Limited</h4>
+                    <p>2005 Khan Br0thers Knitwear Industries Ltd has c0ntinued t0 ev0lve int0 a pr0duct devel0pment and s0urcing 0rganisati0n t0 augment its wh0lly 0wned manufacturing, 
+                      and that 0f its extended KBG family 
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg" style="background-image: url({% static 'assets/img/image 38.png' %} );"></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <h4 class="card-title">Khan Brothers Marble & Granite Limited</h4>
+                    <p>luxury space 0verall s0luti0n pr0vider,
+                       t0 establish a new standard 0f luxury mansi0n material t0 5mm,built-in 0ne-st0p service Dhaka luxury space. Luxury materials + space design + luxury lifestyle + Eur0pean butler service,
+                        create industry-wide benchmark f0r the industry chain.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Cards Section -->
+
+{% endblock content %}
